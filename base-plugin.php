@@ -78,6 +78,8 @@ class Base_Plugin {
 		// Set up admin-specific scripts
 		add_action( 'admin_menu', array( $this,'menu_setup' ) );
 
+		$this->include_files();
+
 	}
 
 	/**
@@ -186,6 +188,23 @@ class Base_Plugin {
 		*/
 
 		wp_enqueue_style( 'baseplugin-styles', plugins_url( 'styles/baseplugin.css', BASEPLUGIN_FILE ), false, date( 'Ymd' ) );
+
+	}
+
+	/**
+	 * Include any require file
+	 *
+	 * Include files.
+	 *
+	 * @uses require_once()
+	 *
+	 */
+	public function include_files() {
+
+		/*
+		* Example for including file our plugin styles
+		*/
+		// require_once( BASEPLUGIN_FILE . '/something.php' );
 
 	}
 
